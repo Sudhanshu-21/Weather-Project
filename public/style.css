@@ -1,0 +1,38 @@
+body{
+    background-image: url('background-image12.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.hidden{
+    visibility: hidden;
+    height: 0px;
+    margin-bottom: -100px;
+}
+ 
+.location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.c0 {
+    letter-spacing: 2px;
+  }
+
+.image{
+    height: 70px;
+}
+
+table tr td{
+    background-color: rgba(235, 231, 236, 0.3) !important;
+    color: white !important;
+}
+table tr th{
+    background-color: rgba(98, 96, 99, 0.3) !important;
+    color: white !important;
+}
+ 
+.hover:hover {
+    color:rgb(193, 234, 219) !important;
+    opacity: 0.5;
+}

@@ -3,24 +3,21 @@ const cityInput = document.querySelector("input");
 const cities = ["London", "Delhi", "Moscow", "Beijing", "Mumbai", "New York", "Barcelona", "Shanghai", "Paris", "Tokyo",  "Bangalore", "Madrid", "Kabul", "Stalingrad", "California", "Dhaka", "Kyiv", "Brussels"];
 const n = cities.length;
 
-
+// Function to fetch data using lattitude and longitude
 async function fetchWeatherLocation(lat, lon){
 
   const url = `/loc?lat=${lat}&lon=${lon}`;
  
   const res = await fetch(url)  
   const data = await res.json() 
-  console.log(data.cod);
-  if (data.cod === '404') { 
-          alert('City not found')  
-          return  
-  } 
-        
-  if (data.cod === 401) {
-          alert('Invalid API Key')
-          return
-  }
-  
+  if (data.cod !== 200) {
+    if(data.cod == 404){
+      console.log(data.cod)
+    }
+    console.log(data.cod)
+    return
+}
+  // Created a object to store required values
   const displayData = {
     cityName: data.name,
     icon: data.weather[0].icon,
@@ -34,18 +31,18 @@ async function fetchWeatherLocation(lat, lon){
     visiblityV: data.visibility
     
   };
+  // Calling function to display data
   addWeatherToDOM(displayData, 0);
 
 }
 
-
-const permission = document.querySelector(".location");
+//  Getting location from user
+const permission = document.querySelector(".location button");
 permission.addEventListener("click", function() {
    if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
-      
       fetchWeatherLocation(lat, lon);
       const ele = document.querySelector(".hidden");
       ele.classList.remove("hidden");
@@ -55,7 +52,7 @@ permission.addEventListener("click", function() {
   }
 }); 
 
-
+// Function to fetch data using city name
 async function fetchWeather(city, i){
 
   const url = `/api?q=${city}`;
@@ -63,16 +60,16 @@ async function fetchWeather(city, i){
   const res = await fetch(url)  
   const data = await res.json()
  
-  if (data.cod === 404) {
-          alert('City not found') 
-          return  
-  }
        
-  if (data.cod === 401) {
-          alert('Invalid API Key')
+  if (data.cod !== 200) {
+    if(data.cod == 404){
+      console.log(data.cod)
+    }
+          console.log(data.cod)
           return
   }
 
+   // Created a object to store required values
   const displayData = {
     cityName: city,
     icon: data.weather[0].icon,
@@ -86,10 +83,12 @@ async function fetchWeather(city, i){
     visiblityV: data.visibility
   };
   
+// Calling function to display data
   addWeatherToDOM(displayData, i);
   
 }
 
+//  Function to display data
 const addWeatherToDOM = (input, i) => {
   const cityName = document.querySelector(`.c${i}`); 
   const temp = document.querySelector(`.t${i}`);
@@ -107,13 +106,14 @@ const addWeatherToDOM = (input, i) => {
  
  cityName.innerText = input.cityName;
  image.innerHTML = `<img src="${imageURL}" alt="" height="90">`;  
- temp.innerText = input.temperature +" ^C";
-  if(i === 0){
+ temp.innerText = input.temperature +" \u00B0C";
+  // wind and feels like is not displayed in table
+ if(i === 0){
     wind.innerText = input.windV +" kmph";
-    feels.innerText = input.feelsV +" ^C";
+    feels.innerText = input.feelsV +" \u00B0C";
   }
-  min.innerText = input.minV +" ^C"; 
-  max.innerText = input.maxV +" ^C";
+  min.innerText = input.minV +" \u00B0C"; 
+  max.innerText = input.maxV +" \u00B0C";
   description.innerText = input.descr;
   humid.innerText = input.humidV;
   visibility.innerText = input.visiblityV +" m";
@@ -121,6 +121,7 @@ const addWeatherToDOM = (input, i) => {
   
 }
 
+// To get the input city name and call fetchWeather function
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (cityInput.value === "") {
@@ -134,8 +135,10 @@ form.addEventListener("submit", (event) => {
   }
 });
 
+// Following code gives the random index for the cities array
 const randIdx = Math.floor(Math.random()*(n-4));
 
+// Using random index table is filled with 5 random cities
 for(let i=1; i<6; i++){
   fetchWeather(cities[randIdx + i - 1], i);
 }

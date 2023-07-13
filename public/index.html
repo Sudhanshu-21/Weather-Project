@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
-<body>
+<body class="grad1">
 <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg grad2">
         <div class="container-fluid">
           <h5 class="text-white mt-1">Weather Web</h5>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +28,7 @@
                 <a class="nav-link text-white" href="#">Help</a>
               </li>
             </ul>
+            <!-- Weather Form -->
             <form class="d-flex" id="weather-form" role="search">
               <input class="form-control me-2 border-outline-light" type="text" name="cityName" id="city-input" placeholder="City" aria-label="Search">
               <button class="btn btn-light btn-outline-primary" type="submit">Search</button>
@@ -36,57 +37,58 @@
         </div>
       </nav>
 
-<!-- Ask for Location -->
 
 
 <!-- Features -->
 
 <div class="px-4 py-5" id="featured-3">
   
+  <!-- Ask for Location -->
   <div class="feature row py-5 align-items-center justify-content-center location">
     <h2 class="text-light col-11 mb-3 text-center">Please allow location access to get weather updates of your place or search for the city in search bar.</h2>
     <button class="btn btn-primary shadow-lg col-4 mt-3 py-2">Allow Location</button> 
   </div>
+  <!-- Data of the city searched -->
     <div class="hidden">
     <div class="row g-4 py-5 align-items-center justify-content-center text-light">
       <div class="feature col-11 col-lg-4 py-5 m-1 rounded rounded bg-light bg-opacity-25 border border-white">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-0 image">  
         </div>
-        <h1 class="fs-1 text-body-emphasis text-capitalize c0">Raebareli</h1>
-        <h2 class="t0">21^C</h2>
+        <h1 class="fs-1 text-body-emphasis text-capitalize c0">--</h1>
+        <h2 class="t0">--</h2>
       </div>
       <div class="feature col-11 col-lg-4 py-5 m-1 rounded bg-light bg-opacity-25 border border-white">
         
         <h3 class="fs-2 text-body-emphasis">Feels like</h3>
-        <h2 class="feels">25^C</h2>
+        <h2 class="feels">--</h2>
         <div class="row">
           <div class="col">
             <h3 class="fs-2 text-body-emphasis">Min</h3>
-        <h2 class="min0">25^C</h2>
+        <h2 class="min0">--</h2>
           </div>
           <div class="col">
             <h3 class="fs-2 text-body-emphasis">Max</h3>
-        <h2 class="max0">25^C</h2>
+        <h2 class="max0">--</h2>
           </div>
         </div>
       </div>
       <div class="feature col-11 col-lg-4 py-5 m-1 rounded bg-light bg-opacity-25 border border-white">
         <h3 class="fs-2 text-body-emphasis">Description</h3>
-        <h2 class="des0">Broken Clouds</h2>
+        <h2 class="des0">--</h2>
         <h3 class="fs-2 text-body-emphasis">Wind</h3>
-        <h2 class="wind">4.63 Kmph</h2>
+        <h2 class="wind">--</h2>
       </div>
       <div class="feature col-11 col-lg-4 py-5 m-1 rounded bg-light bg-opacity-25 border border-white">
         <h3 class="fs-2 text-body-emphasis">Humidity</h3>
-        <h2 class="humid0">83</h2>
+        <h2 class="humid0">--</h2>
         <h3 class="fs-2 text-body-emphasis">Visibility</h3>
-        <h2 class="vis0">10000 m</h2>
+        <h2 class="vis0">--</h2>
       </div>
       </div>
-    </div>
     </div>
   </div>
   <!-- Around the World -->
+  <!-- Table -->
   <div>
     <h1 class="text-light px-5 pt-5 pb-3">Around The World</h1>
     <div class="table-responsive">
@@ -104,49 +106,49 @@
     </thead>
     <tbody>
       <tr class="">
-        <th scope="row" class="ps-5 c1">Delhi</th>
-        <td class="t1 fw-bold">Mark</td>
-        <td class="min1 fw-bold">Otto</td>
-        <td class="max1 fw-bold">@mdo</td>
-        <td class="des1 fw-bold">Mark</td>
-        <td class="humid1 fw-bold">Otto</td>
-        <td class="pe-5 fw-bold vis1">@mdo</td>
+        <th scope="row" class="ps-5 c1">--</th>
+        <td class="t1 fw-bold">--</td>
+        <td class="min1 fw-bold">--</td>
+        <td class="max1 fw-bold">--</td>
+        <td class="des1 fw-bold">--</td>
+        <td class="humid1 fw-bold">--</td>
+        <td class="pe-5 fw-bold vis1">--</td>
       </tr>
       <tr class="">
-        <th scope="row" class="ps-5 c2">Moscow</th>
-        <td class="t2 fw-bold">Mark</td>
-        <td class="min2 fw-bold">Otto</td>
-        <td class="max2 fw-bold">@mdo</td>
-        <td class="des2 fw-bold">Mark</td>
-        <td class="humid2 fw-bold">Otto</td>
-        <td class="pe-5 fw-bold vis2">@mdo</td>
+        <th scope="row" class="ps-5 c2">--</th>
+        <td class="t2 fw-bold">--</td>
+        <td class="min2 fw-bold">--</td>
+        <td class="max2 fw-bold">--</td>
+        <td class="des2 fw-bold">--</td>
+        <td class="humid2 fw-bold">--</td>
+        <td class="pe-5 fw-bold vis2">--</td>
       </tr>
       <tr class="">
-        <th scope="row" class="ps-5 c3">London</th>
-        <td class="t3 fw-bold">Mark</td>
-        <td class="min3 fw-bold">Otto</td>
-        <td class="max3 fw-bold">@mdo</td>
-        <td class="des3 fw-bold">Mark</td>
-        <td class="humid3 fw-bold">Otto</td>
-        <td class="pe-5 fw-bold vis3">@mdo</td>
+        <th scope="row" class="ps-5 c3">--</th>
+        <td class="t3 fw-bold">--</td>
+        <td class="min3 fw-bold">--</td>
+        <td class="max3 fw-bold">--</td>
+        <td class="des3 fw-bold">--</td>
+        <td class="humid3 fw-bold">--</td>
+        <td class="pe-5 fw-bold vis3">--</td>
       </tr>
       <tr class="">
-        <th scope="row" class="ps-5 c4">New York</th>
-        <td class="t4 fw-bold">Mark</td>
-        <td class="min4 fw-bold">Otto</td>
-        <td class="max4 fw-bold">@mdo</td>
-        <td class="des4 fw-bold">Mark</td>
-        <td class="humid4 fw-bold">Otto</td>
-        <td class="pe-5 fw-bold vis4">@mdo</td>
+        <th scope="row" class="ps-5 c4">--</th>
+        <td class="t4 fw-bold">--</td>
+        <td class="min4 fw-bold">--</td>
+        <td class="max4 fw-bold">--</td>
+        <td class="des4 fw-bold">--</td>
+        <td class="humid4 fw-bold">--</td>
+        <td class="pe-5 fw-bold vis4">--</td>
       </tr>
       <tr class="">
-        <th scope="row" class="ps-5 c5">Barcelona</th>
-        <td class="t5 fw-bold">Mark</td>
-        <td class="min5 fw-bold">Otto</td>
-        <td class="max5 fw-bold">@mdo</td>
-        <td class="des5 fw-bold">Mark</td>
-        <td class="humid5 fw-bold">Otto</td>
-        <td class="pe-5 fw-bold vis5">@mdo</td>
+        <th scope="row" class="ps-5 c5">--</th>
+        <td class="t5 fw-bold">--</td>
+        <td class="min5 fw-bold">--</td>
+        <td class="max5 fw-bold">--</td>
+        <td class="des5 fw-bold">--</td>
+        <td class="humid5 fw-bold">--</td>
+        <td class="pe-5 fw-bold vis5">--</td>
       </tr>
     </tbody>
   </table>
